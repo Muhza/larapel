@@ -1,0 +1,27 @@
+.ipr-nav{
+    color: #333;
+    li{
+        color: #333;
+        a{
+            color: #333 !important;
+        }
+    }
+    .normal-text-nav{
+        color: #333;
+        font-size: 16px;
+        margin-left: 18px;
+    }
+    .border-right-low{
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            right: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #eee;
+            height: 40px;
+            width: 1px;
+        }
+    }
+}
