@@ -94,7 +94,7 @@
                             <div class="row">
                             <div class="col-8">
                                 <h2 class="h4 mb-1">
-                                <a href="{{route('house.show', $house->id)}}">{!! formatRupiah($house->price) !!}</a>
+                                <a href="{{route('house.show', $house->id)}}">{!! Helper::formatRupiah($house->price) !!}</a>
                                 </h2>
                             </div>
                             <div class="col-4 text-right">

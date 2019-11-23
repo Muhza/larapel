@@ -59,7 +59,7 @@
         </div>
 
         <div class="col-lg-4 align-self-lg-end text-lg-right mb-5 mb-lg-0">
-          <span class="h3 text-primary font-weight-medium">{!! formatRupiah($house->price) !!}</span>
+          <span class="h3 text-primary font-weight-medium">{!! Helper::formatRupiah($house->price) !!}</span>
         </div>
       </div>
       <!-- End Title -->
@@ -182,7 +182,7 @@
               <!-- Estimated Costs -->
               <div class="row">
                 <div class="col-md-6">
-                  <span class="h1 font-weight-medium mb-0">{!! formatRupiah($house->price) !!}</span>
+                  <span class="h1 font-weight-medium mb-0">{!! Helper::formatRupiah($house->price) !!}</span>
                 </div>
               </div>
               <!-- End Estimated Costs -->
@@ -191,12 +191,12 @@
             <div class="tab-pane fade pt-6" id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab">
               <!-- Gallery -->
               <a class="js-fancybox u-media-viewer" href="javascript:;"
-                 data-src="{!! checkImagePath('storage/'.$house->floorplan) !!}"
+                 data-src="{!! Helper::checkImagePath('storage/'.$house->floorplan) !!}"
                  data-fancybox="fancyboxGalleryFloorPlan"
                  data-caption="Floorplan image #01"
                  data-speed="700"
                  data-is-infinite="true">
-                <img class="img-fluid" src="{!! checkImagePath('storage/'.$house->floorplan) !!}" alt="Image Description">
+                <img class="img-fluid" src="{!! Helper::checkImagePath('storage/'.$house->floorplan) !!}" alt="Image Description">
               </a>
               <!-- End Gallery -->
             </div>
@@ -204,12 +204,12 @@
             <div class="tab-pane fade pt-6" id="pills-three" role="tabpanel" aria-labelledby="pills-three-tab">
               <!-- Gallery -->
               <a class="js-fancybox u-media-viewer" href="javascript:;"
-                 data-src="{!! checkImagePath('storage/'.$house->certificate) !!}"
+                 data-src="{!! Helper::checkImagePath('storage/'.$house->certificate) !!}"
                  data-fancybox="fancyboxGalleryFloorPlan"
                  data-caption="Floorplan image #01"
                  data-speed="700"
                  data-is-infinite="true">
-                <img class="img-fluid" src="{!! checkImagePath('storage/'.$house->certificate) !!}" alt="Image Description">
+                <img class="img-fluid" src="{!! Helper::checkImagePath('storage/'.$house->certificate) !!}" alt="Image Description">
               </a>
               <!-- End Gallery -->
             </div>

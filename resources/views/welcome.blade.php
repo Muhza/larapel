@@ -320,7 +320,7 @@
       <!-- Jakarta -->
       <div class="row justify-content-center text-center mt-4 mb-2">
         <div class="col-lg">
-          <a href="{{route('house.list.location', getLocId('jakarta'))}}" class="custom-big-btn">PROJECT JAKARTA<a>
+          <a href="{{route('house.list.location', Helper::getLocId('jakarta'))}}" class="custom-big-btn">PROJECT JAKARTA<a>
         </div>
       </div>
 
@@ -339,7 +339,7 @@
       <!-- Bogor -->
       <div class="row justify-content-center text-center mt-4 mb-2">
         <div class="col-lg">
-          <a href="{{route('house.list.location', getLocId('bogor'))}}" class="custom-big-btn">PROJECT BOGOR</a>
+          <a href="{{route('house.list.location', Helper::getLocId('bogor'))}}" class="custom-big-btn">PROJECT BOGOR</a>
         </div>
       </div>
 
@@ -358,7 +358,7 @@
       <!-- Depok -->
       <div class="row justify-content-center text-center mt-4 mb-2">
         <div class="col-lg">
-          <a href="{{route('house.list.location', getLocId('depok'))}}" class="custom-big-btn">PROJECT DEPOK</a>
+          <a href="{{route('house.list.location', Helper::getLocId('depok'))}}" class="custom-big-btn">PROJECT DEPOK</a>
         </div>
       </div>
 
@@ -377,7 +377,7 @@
       <!-- Tangerang/Tangsel -->
       <div class="row justify-content-center text-center mt-4 mb-2">
         <div class="col-lg">
-          <a href="{{route('house.list.location', getLocId('tangerang selatan'))}}" class="custom-big-btn">PROJECT TANGERANG/TANGSEL</a>
+          <a href="{{route('house.list.location', Helper::getLocId('tangerang selatan'))}}" class="custom-big-btn">PROJECT TANGERANG/TANGSEL</a>
         </div>
       </div>
 
@@ -396,7 +396,7 @@
       <!-- Bekasi -->
       <div class="row justify-content-center text-center mt-4 mb-2">
         <div class="col-lg">
-          <a href="{{route('house.list.location', getLocId('bekasi'))}}" class="custom-big-btn">PROJECT BEKASI</a>
+          <a href="{{route('house.list.location', Helper::getLocId('bekasi'))}}" class="custom-big-btn">PROJECT BEKASI</a>
         </div>
       </div>
 
