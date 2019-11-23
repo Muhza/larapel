@@ -25,13 +25,13 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <a class="navbar-brand" href="#"><img src="{{ asset('icon.png') }}" width="100"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" onclick="openSidenav();">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse font-weight-bold" id="navbarText">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link nav-home border-right-low" href="#">HOME</a>
+            <a class="nav-link nav-home border-right-low" href="/">HOME</a>
           </li>
         </ul>
         <span class="navbar-text">
@@ -68,6 +68,27 @@
       </div>
     </nav>
     <!-- Navbar -->
+    <div id="sidenav-menu" class="m-sidenav">
+      <div class="close" onclick="closeSidenav();">&times;</div>
+      <div class="sidenav-header">
+          <h2>MENU</h2>
+      </div>
+      <div class="sidenav-content">
+          <ul>
+              <li class="menu-title"><a href="javascript:;">KATEGORI</a></li>
+              @foreach ($categories as $category)
+                <li><a class="" href="{{route('house.list.category', $category->id)}}">{!! $category->name !!}</a></li>
+              @endforeach
+              <li class="menu-title"><a href="javascript:;">LOKASI</a></li>
+              @foreach ($locations as $location)
+                <li><a class="" href="{{route('house.list.location', $location->id)}}">{!! $location->name !!}</a></li>
+              @endforeach
+          </ul>
+      </div>
+      <div class="sidenav-footer">
+          <a href="javascript:;" class="sidenav-close" onclick="closeSidenav();"><span class="fa fa-long-arrow-alt-left mr-1"></span> tutup</a>
+      </div>
+    </div>
     
     <!-- Jumbotron -->
     <div class="jumbotron jumbotron-fluid my-0 py-0">
@@ -128,7 +149,7 @@
 
           <div class="row justify-content-end"> 
             <div class="col-sm-3 mb-2">
-              <a href="#" class="px-4 btn btn-light wa-btn font-weight-bold rounded-pill shadow-whatsapp"><i class="fab fa-fw fa-whatsapp mr-2"></i> Whatsapp</a>
+              <a href="https://wa.me/+6281315511500?text=Assalamu%27alaikum,%20saya%20mau%20tanya%20soal%20Indonesia%20Property%20Syariah.." class="px-4 btn btn-light wa-btn font-weight-bold rounded-pill shadow-whatsapp"><i class="fab fa-fw fa-whatsapp mr-2"></i> Whatsapp</a>
             </div>
           </div>
         </div>
@@ -166,8 +187,7 @@
         </div>
       </div>
 
-      <div class="row justify-content-center py-5 img-bg-container">
-        <img src="{{ asset('images/img_background/jika_sahabat_pernah_mendengar.png') }}" alt="Image background" class="img-bg">
+      <div class="row justify-content-center py-5 custom-rounded-box">
         <div class="col-lg-8 p-5 text-center">
           <p class="font-weight-bold text-white">
             Jika Sahabat pernah mendengar atau mungkin mengalami langsung hal tersebut.. Berarti Sahabat harus simak skema kepemilikan rumah dengan cara yang insyaAllah HALAL & BERKAH ini!
@@ -176,7 +196,7 @@
       </div>
       <div class="row pb-2 pt-3 bg-blue-navy justify-content-end"> 
         <div class="col-sm-3 mb-2">
-          <a href="#" class="px-4 btn btn-light wa-btn font-weight-bold rounded-pill shadow-whatsapp"><i class="fab fa-fw fa-whatsapp mr-2"></i> Whatsapp</a>
+          <a href="https://wa.me/+6281315511500?text=Assalamu%27alaikum,%20saya%20mau%20tanya%20soal%20Indonesia%20Property%20Syariah.." class="px-4 btn btn-light wa-btn font-weight-bold rounded-pill shadow-whatsapp"><i class="fab fa-fw fa-whatsapp mr-2"></i> Whatsapp</a>
         </div>
       </div>
 
@@ -285,7 +305,7 @@
 
       <div class="row pb-2 pt-3 bg-whitte justify-content-end"> 
         <div class="col-sm-3 mb-2">
-          <a href="#" class="px-4 btn btn-success wa-btn font-weight-bold rounded-pill shadow-whatsapp"><i class="fab fa-fw fa-whatsapp"></i> Whatsapp</a>
+          <a href="https://wa.me/+6281315511500?text=Assalamu%27alaikum,%20saya%20mau%20tanya%20soal%20Indonesia%20Property%20Syariah.." class="px-4 btn btn-success wa-btn font-weight-bold rounded-pill shadow-whatsapp"><i class="fab fa-fw fa-whatsapp"></i> Whatsapp</a>
         </div>
       </div>
 
@@ -300,7 +320,7 @@
       <!-- Jakarta -->
       <div class="row justify-content-center text-center mt-4 mb-2">
         <div class="col-lg">
-          <a href="#" class="custom-big-btn">PROJECT JAKARTA</a>
+          <a href="{{route('house.list.location', getLocId('jakarta'))}}" class="custom-big-btn">PROJECT JAKARTA<a>
         </div>
       </div>
 
@@ -319,7 +339,7 @@
       <!-- Bogor -->
       <div class="row justify-content-center text-center mt-4 mb-2">
         <div class="col-lg">
-          <a href="#" class="custom-big-btn">PROJECT BOGOR</a>
+          <a href="{{route('house.list.location', getLocId('bogor'))}}" class="custom-big-btn">PROJECT BOGOR</a>
         </div>
       </div>
 
@@ -338,7 +358,7 @@
       <!-- Depok -->
       <div class="row justify-content-center text-center mt-4 mb-2">
         <div class="col-lg">
-          <a href="#" class="custom-big-btn">PROJECT DEPOK</a>
+          <a href="{{route('house.list.location', getLocId('depok'))}}" class="custom-big-btn">PROJECT DEPOK</a>
         </div>
       </div>
 
@@ -357,7 +377,7 @@
       <!-- Tangerang/Tangsel -->
       <div class="row justify-content-center text-center mt-4 mb-2">
         <div class="col-lg">
-          <a href="#" class="custom-big-btn">PROJECT TANGERANG/TANGSEL</a>
+          <a href="{{route('house.list.location', getLocId('tangerang selatan'))}}" class="custom-big-btn">PROJECT TANGERANG/TANGSEL</a>
         </div>
       </div>
 
@@ -376,7 +396,7 @@
       <!-- Bekasi -->
       <div class="row justify-content-center text-center mt-4 mb-2">
         <div class="col-lg">
-          <a href="#" class="custom-big-btn">PROJECT BEKASI</a>
+          <a href="{{route('house.list.location', getLocId('bekasi'))}}" class="custom-big-btn">PROJECT BEKASI</a>
         </div>
       </div>
 
@@ -401,7 +421,7 @@
       </div>
       
       <div class="row">
-        <div class="col-lg px-0 divider-bg" style="background-image: url({{ asset('images/img_background/garis_garis_pembatas.png') }})">
+        <div class="col-lg px-0 divider-bg">
         </div>
       </div>
 
@@ -423,7 +443,7 @@
       </div>
       
       <div class="row">
-        <div class="col-lg px-0 divider-bg" style="background-image: url({{ asset('images/img_background/garis_garis_pembatas.png') }})">
+        <div class="col-lg px-0 divider-bg">
         </div>
       </div>
       
@@ -436,7 +456,7 @@
       </div>
       
       <div class="row">
-        <div class="col-lg px-0 divider-bg" style="background-image: url({{ asset('images/img_background/garis_garis_pembatas.png') }})">
+        <div class="col-lg px-0 divider-bg">
         </div>
       </div>
 
@@ -519,5 +539,19 @@
 
       <!-- Footer -->
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        function openSidenav(){
+            $('.sidenav, .m-sidenav').removeClass('active');
+            $('#sidenav-menu').addClass('active');
+            $('.overlay').addClass('active');
+            $('body').addClass('d-scroll');
+        }
+        function closeSidenav(){
+            $('.sidenav, .overlay, .m-sidenav').removeClass('active');
+            $('body').removeClass('d-scroll');
+
+        }
+    </script>
   </body>
 </html>

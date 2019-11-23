@@ -44,15 +44,8 @@
           <!-- End Logo -->
 
           <!-- Responsive Toggle Button -->
-          <button type="button" class="navbar-toggler btn u-hamburger"
-                  aria-label="Toggle navigation"
-                  aria-expanded="false"
-                  aria-controls="navBar"
-                  data-toggle="collapse"
-                  data-target="#navBar">
-            <span id="hamburgerTrigger" class="u-hamburger__box">
-              <span class="u-hamburger__inner"></span>
-            </span>
+          <button type="button" class="navbar-toggler" onclick="openSidenav();">
+              <span class="fa fa-bars"></span>
           </button>
           <!-- End Responsive Toggle Button -->
 
@@ -97,6 +90,27 @@
           <!-- End Navigation -->
         </nav>
         <!-- End Nav -->
+        <div id="sidenav-menu" class="m-sidenav">
+          <div class="close" onclick="closeSidenav();">&times;</div>
+          <div class="sidenav-header">
+              <h2>MENU</h2>
+          </div>
+          <div class="sidenav-content">
+              <ul>
+                  <li class="menu-title"><a href="javascript:;">KATEGORI</a></li>
+                  @foreach ($categories as $category)
+                    <li><a class="" href="{{route('house.list.category', $category->id)}}">{!! $category->name !!}</a></li>
+                  @endforeach
+                  <li class="menu-title"><a href="javascript:;">LOKASI</a></li>
+                  @foreach ($locations as $location)
+                    <li><a class="" href="{{route('house.list.location', $location->id)}}">{!! $location->name !!}</a></li>
+                  @endforeach
+              </ul>
+          </div>
+          <div class="sidenav-footer">
+              <a href="javascript:;" class="sidenav-close" onclick="closeSidenav();"><span class="fa fa-long-arrow-alt-left mr-1"></span> tutup</a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -210,6 +224,17 @@
       // initialization of go to
       $.HSCore.components.HSGoTo.init('.js-go-to');
     });
+    function openSidenav(){
+        $('.sidenav, .m-sidenav').removeClass('active');
+        $('#sidenav-menu').addClass('active');
+        $('.overlay').addClass('active');
+        $('body').addClass('d-scroll');
+    }
+    function closeSidenav(){
+        $('.sidenav, .overlay, .m-sidenav').removeClass('active');
+        $('body').removeClass('d-scroll');
+
+    }
 
     $(window).on('resize', function() {
       setTimeout(function() {
